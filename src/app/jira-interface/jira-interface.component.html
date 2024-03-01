@@ -1,0 +1,19 @@
+<mat-toolbar>
+    <span>Jira Toolkit</span>
+</mat-toolbar>
+<mat-card class="container">
+    <mat-card-content>
+        <form (ngSubmit)="submitForm()">
+            <div class="form-container">
+                <mat-form-field>
+                        <input matInput placeholder="Jira ID" [(ngModel)]="jiraId" name="jiraId">
+                </mat-form-field>
+                <mat-radio-group class="form-radio-buttons" [(ngModel)]="selectedOption" name="options">
+                        <mat-radio-button value="test-case">Generate Test Case</mat-radio-button>
+                        <mat-radio-button value="questions">Relevant Questions to Ask</mat-radio-button>
+                </mat-radio-group>
+                <button mat-raised-button color="primary" type="submit">Submit</button>
+            </div>
+        </form>
+    </mat-card-content>
+</mat-card>  
