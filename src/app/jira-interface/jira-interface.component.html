@@ -1,19 +1,37 @@
-<mat-toolbar>
-    <span>Jira Toolkit</span>
+<mat-toolbar style="justify-content: center;">
+    <span >Jira Toolkit</span>
 </mat-toolbar>
 <mat-card class="container">
     <mat-card-content>
         <form (ngSubmit)="submitForm()">
             <div class="form-container">
                 <mat-form-field>
-                        <input matInput placeholder="Jira ID" [(ngModel)]="jiraId" name="jiraId">
+                        <input matInput placeholder="Jira ID"
+                        [(ngModel)]="jiraId"
+                        name="jiraId">
                 </mat-form-field>
-                <mat-radio-group class="form-radio-buttons" [(ngModel)]="selectedOption" name="options">
+                <mat-radio-group  class="form-radio-buttons"
+                                  [(ngModel)]="selectedOption"
+                                  name="options">
                         <mat-radio-button value="testCases">Generate Test Case</mat-radio-button>
                         <mat-radio-button value="questions">Relevant Questions to Ask</mat-radio-button>
                 </mat-radio-group>
-                <button mat-raised-button color="primary" type="submit">Submit</button>
+                <button mat-raised-button color="primary"
+                type="submit"
+                [disabled]="isLoading || !(jiraId.length > 3 && selectedOption.length > 0)">
+                    Submit
+                </button>
             </div>
         </form>
+    </mat-card-content>
+</mat-card>
+<mat-card class="container result-container">
+    <mat-card-content>
+        <mat-spinner *ngIf="isLoading" diameter="50" mode="indeterminate"></mat-spinner>
+        <ul>
+            <li *ngFor="let result of results">
+                {{result}}
+            </li>
+        </ul>
     </mat-card-content>
 </mat-card>  

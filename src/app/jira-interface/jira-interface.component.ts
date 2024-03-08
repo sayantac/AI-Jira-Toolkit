@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { JiraInterfaceService } from '../services/jira-interface.service';
+import { map, of, catchError } from 'rxjs';
 
 @Component({
   selector: 'app-jira-interface',
@@ -9,18 +10,31 @@ import { JiraInterfaceService } from '../services/jira-interface.service';
 export class JiraInterfaceComponent {
   jiraId: string = '';
   selectedOption: string = '';
+  isLoading = false;
+  results: string[] = [];
   constructor(private jiraService: JiraInterfaceService){}
   submitForm() {
-    // Call your backend API with this.jiraId and this.selectedOption
-    // Handle the response according to your defined format
-    console.log('Jira ID:', this.jiraId);
-    console.log('Selected Option:', this.selectedOption);
+    this.isLoading = true;
     this.jiraService.getDetails(this.jiraId, 
                                 (this.selectedOption === 'questions'), 
                                 (this.selectedOption === 'testCases'))
-                                .subscribe((response: any) => {
-                                  console.log(response);
+                                .pipe(
+                                  catchError((error) => {
+                                    console.error('Error:', error);
+                                    this.isLoading = false;
+                                    return of('An error occurred');
+                                  }),
+                                  map((response: string) => {
+                                    let arrayRes = response.split("\n");
+                                    arrayRes.shift();
+                                    return arrayRes;
+                                  }),
+      
+                                ).subscribe((response: string[]) => {
+                                  this.isLoading = false;
+                                  this.results = response;
                                 });
     
   }
+  
 }
