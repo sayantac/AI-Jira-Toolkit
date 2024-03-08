@@ -16,16 +16,16 @@
 //     expect(app).toBeTruthy();
 //   });
 
-//   it(`should have as title 'memory-leak-v13'`, () => {
+//   it(`should have as title 'jira-sdlc-bot-fe'`, () => {
 //     const fixture = TestBed.createComponent(AppComponent);
 //     const app = fixture.componentInstance;
-//     expect(app.title).toEqual('memory-leak-v13');
+//     expect(app.title).toEqual('jira-sdlc-bot-fe');
 //   });
 
 //   it('should render title', () => {
 //     const fixture = TestBed.createComponent(AppComponent);
 //     fixture.detectChanges();
 //     const compiled = fixture.nativeElement as HTMLElement;
-//     expect(compiled.querySelector('.content span')?.textContent).toContain('memory-leak-v13 app is running!');
+//     expect(compiled.querySelector('.content span')?.textContent).toContain('jira-sdlc-bot-fe app is running!');
 //   });
 // });

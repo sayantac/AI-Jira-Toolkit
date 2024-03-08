@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "memory-leak-v14": {
+    "jira-sdlc-bot-fe": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/memory-leak-v14",
+            "outputPath": "dist/jira-sdlc-bot-fe",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -70,10 +70,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "memory-leak-v14:build:production"
+              "browserTarget": "jira-sdlc-bot-fe:build:production"
             },
             "development": {
-              "browserTarget": "memory-leak-v14:build:development"
+              "browserTarget": "jira-sdlc-bot-fe:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -81,7 +81,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "memory-leak-v14:build"
+            "browserTarget": "jira-sdlc-bot-fe:build"
           }
         },
         "test": {
@@ -105,5 +105,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }

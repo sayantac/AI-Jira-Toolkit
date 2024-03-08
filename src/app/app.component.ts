@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'memory-leak-v14';
+  title = 'jira-sdlc-bot-fe';
   constructor(
   ) {}
 

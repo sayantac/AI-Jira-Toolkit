@@ -25,7 +25,7 @@ module.exports = function (config) {
       suppressAll: true // removes the duplicated traces
     },
     coverageReporter: {
-      dir: require('path').join(__dirname, './coverage/memory-leak-v14'),
+      dir: require('path').join(__dirname, './coverage/jira-sdlc-bot-fe'),
       subdir: '.',
       reporters: [
         { type: 'html' },
