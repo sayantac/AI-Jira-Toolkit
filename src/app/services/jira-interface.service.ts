@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
     providedIn: 'root'
 })
 export class JiraInterfaceService {
-    private API_URL: string = 'https://jira-sdlc-bot-backend-nagarro.koyeb.app/process_jira'
+    private API_URL: string = 'https://jira-sdlc-bot-backend-nagarro-be.koyeb.app/process_jira'
     constructor(private _http: HttpClient){
 
     }
