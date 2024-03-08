@@ -12,7 +12,7 @@ export class JiraInterfaceService {
     }
 
     public getDetails(jiraId: string, getRequirements: boolean, requireTestcases: boolean): Observable<any> {
-        return this._http.get(`${this.API_URL}?jira_ID=${jiraId}&is_requirement=${getRequirements}&is_test_case=${requireTestcases}`);
+        return this._http.get(`${this.API_URL}?jiraID=${jiraId}&isRequirement=${getRequirements}&isTestCase=${requireTestcases}`);
     }
 
 }

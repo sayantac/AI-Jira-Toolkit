@@ -13,6 +13,8 @@ import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { FormsModule } from '@angular/forms';
+import { JiraInterfaceService } from './services/jira-interface.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -29,9 +31,12 @@ import { FormsModule } from '@angular/forms';
     MatFormFieldModule,
     FormsModule,
     MatCardModule,
-    MatToolbarModule
+    MatToolbarModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    JiraInterfaceService
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

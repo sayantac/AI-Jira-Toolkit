@@ -19,8 +19,8 @@ export class JiraInterfaceComponent {
                                 (this.selectedOption === 'questions'), 
                                 (this.selectedOption === 'testCases'))
                                 .subscribe((response: any) => {
-
-                              })  
+                                  console.log(response);
+                                });
     
   }
 }
